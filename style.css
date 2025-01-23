@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
+    padding: 20px;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -11,6 +13,7 @@ body {
     align-items: center;
     background: linear-gradient(135deg, #f8cdda, #1d2b64);
 }
+
 .container {
     width: 780px;
     padding: 35px 40px;
@@ -18,6 +21,7 @@ body {
     background: #1c1e24;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
 header h2 {
     display: flex;
     justify-content: center;
@@ -27,18 +31,25 @@ header h2 {
     margin-bottom: 30px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
+
 .piano-keys {
     display: flex;
     list-style: none;
     margin-top: 20px;
+    flex-wrap: nowrap; /* جلوگیری از ردیف شدن کلیدها */
+    justify-content: flex-start;
+    overflow-x: auto; /* اضافه کردن اسکرول افقی در صورت نیاز */
 }
+
 .piano-keys .key {
     cursor: pointer;
     user-select: none;
     text-transform: uppercase;
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s ease-in-out;
+    flex-shrink: 1; /* اجازه می‌دهد که کلیدها در صورت نیاز کوچک شوند */
 }
+
 .piano-keys .white {
     height: 230px;
     width: 70px;
@@ -48,6 +59,7 @@ header h2 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin: 0 5px;
 }
+
 .piano-keys .black {
     z-index: 2;
     width: 44px;
@@ -57,6 +69,7 @@ header h2 {
     background: linear-gradient(145deg, #333333, #1d2125);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
+
 .piano-keys .key span {
     position: absolute;
     bottom: 20px;
@@ -66,39 +79,102 @@ header h2 {
     font-weight: bold;
     text-align: center;
 }
+
 .piano-keys .black span {
     bottom: 13px;
     color: #eaeaea;
 }
+
 .piano-keys .key.active {
     transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Media Query for screens smaller than 400px */
-@media (max-width: 400px) {
+/* Media Query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .piano-keys .white {
+        width: 60px;
+        height: 200px;
+    }
+
+    .piano-keys .black {
+        width: 40px;
+        height: 130px;
+        margin: 0 -20px;
+    }
+
+    .piano-keys .key span {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query for screens smaller than 480px */
+@media (max-width: 480px) {
     .container {
         width: 100%;
-        padding: 15px;
+        padding: 20px;
     }
+
     header h2 {
         font-size: 1.4rem;
         margin-bottom: 20px;
     }
-    .piano-keys {
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
+
     .piano-keys .white {
-        width: 45px;
+        width: 50px;
         height: 180px;
     }
+
     .piano-keys .black {
-        width: 30px;
-        height: 110px;
-        margin: 0 -15px;
+        width: 35px;
+        height: 120px;
+        margin: 0 -17px;
     }
+
     .piano-keys .key span {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Media Query for screens larger than 1200px (Large Screens) */
+@media (min-width: 1200px) {
+    .container {
+        width: 780px;
+        padding: 35px 40px;
+    }
+
+    header h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .piano-keys {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .piano-keys .white {
+        width: 70px;
+        height: 230px;
+    }
+
+    .piano-keys .black {
+        width: 44px;
+        height: 140px;
+        margin: 0 -22px;
+    }
+
+    .piano-keys .key span {
+        font-size: 1.2rem;
     }
 }
