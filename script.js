@@ -11,7 +11,7 @@ function playSound(key){ //تابع پخش صدای کلید
 }
 
 pianoKeys.forEach(function(key){ //حلقه ای برای تک تک کلیدها
-    key.addEventListener('click',function(){ //nv w,vj ;gd;
+    key.addEventListener('click',function(){ //در صورت کلیک شدن کلیدی
         playSound(key); //تابع مربوطه اجرا شود
     })
 })
