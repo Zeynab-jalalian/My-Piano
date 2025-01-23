@@ -1,63 +1,63 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+body {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f8cdda, #1d2b64); /* پس زمینه شیک و مدرن */
+    background: linear-gradient(135deg, #f8cdda, #1d2b64);
 }
-.container{
+.container {
     width: 780px;
     padding: 35px 40px;
     border-radius: 15px;
-    background: #1c1e24; /* پس‌زمینه تیره برای کادر */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* سایه با عمق بیشتر */
+    background: #1c1e24;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-header h2{
+header h2 {
     display: flex;
     justify-content: center;
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
     margin-bottom: 30px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* سایه زیبا برای عنوان */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
-.piano-keys{
+.piano-keys {
     display: flex;
     list-style: none;
     margin-top: 20px;
 }
-.piano-keys .key{
+.piano-keys .key {
     cursor: pointer;
     user-select: none;
     text-transform: uppercase;
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s ease-in-out;
 }
-.piano-keys .white{
+.piano-keys .white {
     height: 230px;
     width: 70px;
     border-radius: 8px;
-    background: linear-gradient(145deg, #ffffff, #f1f1f1); /* گرادینت روشن و زیبا برای کلیدهای سفید */
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
     border: 1px solid #dcdcdc;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* سایه ملایم برای کلیدهای سفید */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin: 0 5px;
 }
-.piano-keys .black{
+.piano-keys .black {
     z-index: 2;
     width: 44px;
     height: 140px;
-    margin: 0 -22px 0 -22px;
+    margin: 0 -22px;
     border-radius: 5px;
-    background: linear-gradient(145deg, #333333, #1d2125); /* گرادینت تیره و جذاب برای کلیدهای سیاه */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* سایه نرم و جذاب برای کلیدهای سیاه */
+    background: linear-gradient(145deg, #333333, #1d2125);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
-.piano-keys .key span{
+.piano-keys .key span {
     position: absolute;
     bottom: 20px;
     width: 100%;
@@ -66,11 +66,39 @@ header h2{
     font-weight: bold;
     text-align: center;
 }
-.piano-keys .black span{
+.piano-keys .black span {
     bottom: 13px;
-    color: #eaeaea; /* رنگ روشن و خوانا برای کلیدهای سیاه */
+    color: #eaeaea;
 }
-.piano-keys .key.active{
+.piano-keys .key.active {
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* افکت فعال شدن کلید */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Media Query for screens smaller than 400px */
+@media (max-width: 400px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+    header h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    .piano-keys {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .piano-keys .white {
+        width: 45px;
+        height: 180px;
+    }
+    .piano-keys .black {
+        width: 30px;
+        height: 110px;
+        margin: 0 -15px;
+    }
+    .piano-keys .key span {
+        font-size: 1rem;
+    }
 }
