@@ -9,3 +9,9 @@ function playSound(key){ //تابع پخش صدای کلید
         key.classList.remove('active') //حذف کلاس پس از 0.5 ثانیه
     },500)
 }
+
+pianoKeys.forEach(function(key){ //حلقه ای برای تک تک کلیدها
+    key.addEventListener('click',function(){ //nv w,vj ;gd;
+        playSound(key); //تابع مربوطه اجرا شود
+    })
+})
