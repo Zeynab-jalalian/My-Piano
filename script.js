@@ -1,4 +1,4 @@
-const pianoKeys=document.querySelectorAll('piano-keys .key'); //دسترسی به کلیدهای پیانو
+const pianoKeys=document.querySelectorAll('.piano-keys .key'); //دسترسی به کلیدهای پیانو
 
 function playSound(key){ //تابع پخش صدای کلید
     const keySound=key.dataset.key; //کلید مشخص
